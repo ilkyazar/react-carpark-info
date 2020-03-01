@@ -3,7 +3,6 @@ const request = require('request');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = process.env.PORT || 5000;
 
 let url = "https://api.ibb.gov.tr/ispark/Park"
 
@@ -26,5 +25,6 @@ app.get('/api/data', (req, res) => {
     })
 })
 
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

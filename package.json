@@ -6,7 +6,7 @@
     "backend": "nodemon backend.js",
     "dev": "concurrently --kill-others-on-fail \"yarn backend\" \"yarn frontend\"",
     "start": "node backend.js",
-    "heroku-postbuild": "cd frontend && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "heroku-postbuild": "cd frontend && yarn && yarn run build"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
