@@ -31,4 +31,5 @@ backend.js is the server side code
 
 package.json file contains the dependencies of the app
              I also set start and heroku-postbuild here 
-             When working on local "yarn dev" is enough
+             When working on local run "yarn" in frontend folder and in main project folder
+             Then, "yarn dev" is enough
