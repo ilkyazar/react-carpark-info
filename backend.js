@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 5000;
 
+const path = require('path');
+
 let url = "https://api.ibb.gov.tr/ispark/Park"
 
 app.use(bodyParser.json());
