@@ -3,6 +3,7 @@ const request = require('request');
 const bodyParser = require('body-parser');
 
 const app = express();
+const port = process.env.PORT || 5000;
 
 let url = "https://api.ibb.gov.tr/ispark/Park"
 
@@ -25,6 +26,12 @@ app.get('/api/data', (req, res) => {
     })
 })
 
-const port = process.env.PORT || 5000;
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, 'frontend/build')));
+      
+    app.get('*', function(req, res) {
+      res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
+    });
+  }
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
